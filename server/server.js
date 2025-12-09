@@ -18,6 +18,11 @@ const Stop = require('./modals/Stop');
 const StopTime = require('./modals/StopTime');
 const Trip = require('./modals/Trip');
 
+const cors = require('cors');
+app.use(cors({
+    origin: process.env.CORS_ORIGIN || '*',
+    credentials: true
+}));
 
 app.use(express.json());
 

@@ -13,4 +13,4 @@ const calendarSchema = new mongoose.Schema({
     end_date: { type: String, required: true }
 });
 
-module.exports = mongoose.model('Calendar', calendarSchema, 'halifax_routes');
+module.exports = mongoose.model('Calendar', calendarSchema, 'halifax_calendar');
