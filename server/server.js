@@ -21,27 +21,12 @@ const Trip = require('./modals/Trip');
 
 app.use(express.json());
 
-app.get('/health', (req, res) => {
-    res.json({"status":"healthy"});
-});
+const utilityRoutes = require('./routes/utilities');
+const staticRoutes = require('./routes/static');
 
-app.get(`/api/realtime/vehicles`, apiChecker, (req, res) => {
-    try {
-        const data = gtfs.getVehiclePositions();
-        res.json(data);
-    } catch (err) {
-        res.status(500).json({ error: 'Internal server error' });
-    }
-});
+app.use('/utilities', utilityRoutes);
+app.use('/static', staticRoutes);
 
-app.get(`/api/static/routes`, apiChecker, async (req, res) => {
-    try {
-        const routes = await Route.find({});
-        res.json(routes);
-    } catch (err) {
-        res.status(500).json({ error: 'Internal server error' });
-    }
-})
 
 async function main() {
     try {
