@@ -23,9 +23,11 @@ app.use(express.json());
 
 const utilityRoutes = require('./routes/utilities');
 const staticRoutes = require('./routes/static');
+const realtimeRoutes = require('./routes/realtime');
 
 app.use('/utilities', utilityRoutes);
 app.use('/static', staticRoutes);
+app.use('/realtime', realtimeRoutes);
 
 
 async function main() {
