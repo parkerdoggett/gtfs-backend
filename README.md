@@ -16,7 +16,8 @@ Using Docker:
 
 1. Run `docker build -t gtfs-backend .` in the root.
 2. Create your `.env` with `PORT` and `MONGODB_URI`.
-3. Run `docker run -d -p 80:8080 --env-file server/.env gtfs-backend`
+3. Run `docker build -t gtfs-backend ./server`
+4. Run `docker run -d -p 80:8080 --env-file server/.env gtfs-backend`
 
 Using node:
 
