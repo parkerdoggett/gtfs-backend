@@ -24,6 +24,8 @@ Using node:
 2. Create your `.env` with `PORT` and `MONGODB_URI`, save it in the /server directory.
 3. Run `node server/server.js`.
 
+You will need to create an API Key in the apikeys collection in your MongoDB instance. The format is simply `key: "yoursecretkey"`.
+
 If you want to modify the realtime GTFS URLs you can do so in the server/gtfs.js file.
 
 Licensed under the MIT License.
