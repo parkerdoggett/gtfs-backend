@@ -138,8 +138,10 @@ router.get('/stops/:id/departures', async (req, res) => {
         const StopTime = require('../modals/StopTime');
         const Trip = require('../modals/Trip');
 
-        const now = new Date();
-        const nowString = now.toTimeString().slice(0, 8);
+        const nowString = new Date().toLocaleTimeString('en-GB', {
+            timeZone: 'America/Halifax',
+            hour12: false
+        });
 
         const upcoming = await StopTime.find({
             stop_id: stopId,
