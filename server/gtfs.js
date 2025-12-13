@@ -70,7 +70,7 @@ async function fetchAndCacheAlerts() {
 
         realtimeAlertsCache.timestamp = feed.header.timestamp.low;
     } catch (err) {
-        console.error(`Error parsing alert data: ${error.message}`);
+        console.error(`Error parsing alert data: ${err.message}`);
     }
 }
 
